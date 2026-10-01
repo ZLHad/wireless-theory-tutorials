@@ -1,0 +1,417 @@
+[
+ {
+  "id": "g-04-1",
+  "page": "guide/04-timeline-standards.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "g-05-1",
+  "page": "guide/05-eight-threads.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "g-06-1",
+  "page": "guide/06-direction-lifecycle.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "g-06-2",
+  "page": "guide/06-direction-lifecycle.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "g-06-3",
+  "page": "guide/06-direction-lifecycle.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-01-2",
+  "page": "part0/01-em-waves-antennas.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-02-1",
+  "page": "part0/02-wireless-channel-basics.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-02-2",
+  "page": "part0/02-wireless-channel-basics.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-03-3",
+  "page": "part0/03-digital-communications.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-03-4",
+  "page": "part0/03-digital-communications.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-04-1",
+  "page": "part0/04-information-theory-basics.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-05-3",
+  "page": "part0/05-mimo.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-06-1",
+  "page": "part0/06-wireless-networks.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-07-1",
+  "page": "part0/07-optimization-basics.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-08-1",
+  "page": "part0/08-reinforcement-learning.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-09-1",
+  "page": "part0/09-new-landscape.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-10-0",
+  "page": "part0/10-new-phy-dof.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-10-1",
+  "page": "part0/10-new-phy-dof.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-10-2",
+  "page": "part0/10-new-phy-dof.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-10-3",
+  "page": "part0/10-new-phy-dof.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-10-4",
+  "page": "part0/10-new-phy-dof.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-10-5",
+  "page": "part0/10-new-phy-dof.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-11-0",
+  "page": "part0/11-new-network-frontiers.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-11-1",
+  "page": "part0/11-new-network-frontiers.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p0-11-2",
+  "page": "part0/11-new-network-frontiers.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p1-01-0",
+  "page": "part1/01-lie-of-randomness.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p1-02-1",
+  "page": "part1/02-maxwell-foundations.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p1-03-0",
+  "page": "part1/03-statistical-lineage.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p1-04-0",
+  "page": "part1/04-spatial-structure.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p1-04-3",
+  "page": "part1/04-spatial-structure.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p1-05-1",
+  "page": "part1/05-deterministic-revival.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p1-06-1",
+  "page": "part1/06-inverse-problem.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p1-07-1",
+  "page": "part1/07-channel-cartography.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p1-08-2",
+  "page": "part1/08-dimension-and-prediction.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p1-09-1",
+  "page": "part1/09-exchange-and-universality.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p1-09-2",
+  "page": "part1/09-exchange-and-universality.md",
+  "type": "quadrantChart"
+ },
+ {
+  "id": "p2-01-0",
+  "page": "part2/01-four-arrows.md",
+  "type": "quadrantChart"
+ },
+ {
+  "id": "p2-01-1",
+  "page": "part2/01-four-arrows.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p2-02-1",
+  "page": "part2/02-blackwell.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p2-02-2",
+  "page": "part2/02-blackwell.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p2-03-1",
+  "page": "part2/03-task-knowledge-lattice.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p2-04-0",
+  "page": "part2/04-environment-generalization.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p2-04-1",
+  "page": "part2/04-environment-generalization.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p2-04-2",
+  "page": "part2/04-environment-generalization.md",
+  "type": "quadrantChart"
+ },
+ {
+  "id": "p2-05-0",
+  "page": "part2/05-cognitive-triangle.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p2-05-2",
+  "page": "part2/05-cognitive-triangle.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p2-05-3",
+  "page": "part2/05-cognitive-triangle.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p2-05-5",
+  "page": "part2/05-cognitive-triangle.md",
+  "type": "quadrantChart"
+ },
+ {
+  "id": "p2-06-1",
+  "page": "part2/06-error-budget.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p2-06-2",
+  "page": "part2/06-error-budget.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p2-06-3",
+  "page": "part2/06-error-budget.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p2-07-1",
+  "page": "part2/07-research-agenda.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p2-07-2",
+  "page": "part2/07-research-agenda.md",
+  "type": "quadrantChart"
+ },
+ {
+  "id": "p3-01-1",
+  "page": "part3/01-three-mountains.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p3-02-3",
+  "page": "part3/02-classical-foundations.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p3-03-1",
+  "page": "part3/03-nonconvex-era.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p3-03-2",
+  "page": "part3/03-nonconvex-era.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p3-04-3",
+  "page": "part3/04-sequential-uncertainty.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p3-05-2",
+  "page": "part3/05-price-of-prediction.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p3-06-4",
+  "page": "part3/06-communication-lower-bounds.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p3-07-1",
+  "page": "part3/07-price-of-layering.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p3-08-1",
+  "page": "part3/08-computing-network-capacity.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-01-0",
+  "page": "part4/01-one-counterexample.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-01-1",
+  "page": "part4/01-one-counterexample.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-02-1",
+  "page": "part4/02-team-decision-theory.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-02-2",
+  "page": "part4/02-team-decision-theory.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-02-4",
+  "page": "part4/02-team-decision-theory.md",
+  "type": "quadrantChart"
+ },
+ {
+  "id": "p4-03-2",
+  "page": "part4/03-information-structure-phase-diagram.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-03-3",
+  "page": "part4/03-information-structure-phase-diagram.md",
+  "type": "quadrantChart"
+ },
+ {
+  "id": "p4-04-0",
+  "page": "part4/04-coordination-information-theory.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-04-1",
+  "page": "part4/04-coordination-information-theory.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-05-1",
+  "page": "part4/05-shared-world-model.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-05-2",
+  "page": "part4/05-shared-world-model.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-06-0",
+  "page": "part4/06-learning-dynamics.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-06-1",
+  "page": "part4/06-learning-dynamics.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-06-2",
+  "page": "part4/06-learning-dynamics.md",
+  "type": "quadrantChart"
+ },
+ {
+  "id": "p4-07-1",
+  "page": "part4/07-mean-field.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-07-2",
+  "page": "part4/07-mean-field.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-07-3",
+  "page": "part4/07-mean-field.md",
+  "type": "quadrantChart"
+ },
+ {
+  "id": "p4-08-1",
+  "page": "part4/08-network-games.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-08-3",
+  "page": "part4/08-network-games.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-09-1",
+  "page": "part4/09-research-agenda.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p4-09-2",
+  "page": "part4/09-research-agenda.md",
+  "type": "quadrantChart"
+ }
+]

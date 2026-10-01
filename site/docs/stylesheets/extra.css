@@ -1,0 +1,95 @@
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #b71c1c;
+  --md-primary-fg-color--light: #d32f2f;
+  --md-primary-fg-color--dark:  #7f0000;
+  --md-accent-fg-color: #d32f2f;
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #ef9a9a;
+  --md-primary-fg-color--light: #ffcdd2;
+  --md-primary-fg-color--dark:  #e57373;
+  --md-accent-fg-color: #ffcdd2;
+}
+.md-typeset {
+  font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.78;
+}
+.md-typeset h1 {
+  font-weight: 700;
+  color: var(--md-primary-fg-color);
+  border-bottom: 3px solid var(--md-primary-fg-color);
+  padding-bottom: 0.3em;
+}
+.md-typeset h2 {
+  color: var(--md-primary-fg-color);
+  border-left: 4px solid var(--md-primary-fg-color);
+  padding-left: 0.5em;
+  margin-top: 1.6em;
+}
+.md-typeset h3 { margin-top: 1.2em; }
+.md-typeset strong { color: var(--md-primary-fg-color); }
+.md-typeset figcaption, .md-typeset em.caption {
+  display: block; text-align: center;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.85em; margin-top: 0.5em; font-style: normal;
+}
+.md-typeset table:not([class]) th {
+  background: rgba(183,28,28,0.08);
+  color: var(--md-primary-fg-color);
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background: rgba(239,154,154,0.12);
+}
+.md-typeset mjx-container { overflow-x: auto; max-width: 100%; }
+.md-typeset img {
+  max-width: 85%; display: block; margin: 1em auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1); border-radius: 4px;
+}
+.md-typeset .mermaid,
+.md-typeset .mermaid-rendered { text-align: center; margin: 1.2em 0; }
+.md-typeset .mermaid-rendered svg { max-width: 100%; height: auto; }
+/* 缩到 80% 以下的流程图（手机上常见）：点一下看原尺寸、横向滚动，再点一下复原（mermaid-init.js） */
+.md-typeset .mermaid-rendered.mmd-zoomable { cursor: zoom-in; }
+.md-typeset .mermaid-rendered.mmd-zoomed { cursor: zoom-out; overflow-x: auto; text-align: left; }
+.md-typeset .mermaid-rendered.mmd-zoomable::after,
+.md-typeset .mermaid-rendered.mmd-zoomed::after {
+  content: "轻点图看原尺寸"; display: block; margin-top: .3em; text-align: center;
+  font-size: .6rem; color: var(--md-default-fg-color--light);
+}
+.md-typeset .mermaid-rendered.mmd-zoomed::after { content: "再点一下复原"; text-align: left; }
+/* mermaid 图里的公式写作 $$…$$，由 mermaid 内置的 KaTeX 输出 MathML。
+   含公式的标签里 <br/> 会变成换行符，整个标签被包进一个 flex 行；改成按原样换行、公式按行内排。
+   这几条要在 mermaid 量尺寸之前生效，所以不加 .mermaid-rendered 前缀。 */
+.nodeLabel > div[style*="display: flex"],
+.edgeLabel > div[style*="display: flex"],
+.messageText > div[style*="display: flex"] { display: block !important; white-space: pre !important; }
+.nodeLabel math[display="block"],
+.edgeLabel math[display="block"] { display: inline math !important; }
+/* Chrome 的 MathML 不认 mathvariant="bold"，粗体符号靠这条补上 */
+.nodeLabel math [mathvariant="bold"],
+.edgeLabel math [mathvariant="bold"] { font-weight: bold; text-transform: none; }
+/* 统计图：matplotlib 生成的 SVG，浅色、深色各一份（#only-light / #only-dark） */
+.md-typeset img.chart { max-width: 100%; box-shadow: none; border-radius: 0; margin: 1em auto 0.4em; }
+/* 渲染失败时的兜底：图源以代码块形式可读 */
+.md-typeset pre.mermaid-src {
+  overflow-x: auto;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+/* 开放问题总表"从定理到判据"：五列定宽，免得后三列被挤成一条；窄屏保留最小宽度，横向滚动 */
+.md-typeset .criteria-table .md-typeset__table { display: block; }
+.md-typeset .criteria-table table:not([class]) { display: table; table-layout: fixed; width: 100%; min-width: 34rem; }
+.md-typeset .criteria-table th:nth-child(1) { width: 13%; }
+.md-typeset .criteria-table th:nth-child(2) { width: 25%; }
+.md-typeset .criteria-table th:nth-child(3) { width: 20%; }
+.md-typeset .criteria-table th:nth-child(4) { width: 18%; }
+.md-typeset .criteria-table th:nth-child(5) { width: 24%; }
+.md-typeset .criteria-table table:not([class]) th,
+.md-typeset .criteria-table table:not([class]) td { padding: .8em .7em; }
+
+/* 比所在段落还宽的行内公式（手机上常见）：自己横向滚动，不把整页撑宽（mathjax-config.js 负责标记） */
+.md-typeset span.arithmatex.math-wide { display: inline-block; max-width: 100%; overflow-x: auto; overflow-y: hidden; vertical-align: middle; }
+/* MathJax 给读屏软件准备的隐藏 MathML 按浏览器原生字体排版，常比可见公式宽几像素；靠近行尾的公式会因此把整页撑宽 */
+mjx-container > mjx-assistive-mml { max-width: 100% !important; }

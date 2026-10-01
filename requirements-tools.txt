@@ -1,0 +1,4 @@
+# 重新生成统计图（charts/）与符号表、术语表（notation-glossary/）时另需
+-r requirements.txt
+matplotlib==3.8.2
+PyYAML==6.0.1

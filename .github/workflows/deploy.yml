@@ -1,0 +1,42 @@
+# 推送到 main 后构建站点并发布到 GitHub Pages（仓库 Settings → Pages 的来源选 GitHub Actions）
+name: 构建并发布站点
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      # --strict：有任何警告（坏链接、坏锚点）就构建失败，不发布
+      - run: mkdocs build --strict -f site/mkdocs.yml
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

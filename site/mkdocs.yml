@@ -1,0 +1,159 @@
+site_name: 理论地基·四部曲
+site_description: 从环境到群体：无线智能网络缺失的四层理论地基 —— 环境的科学 · 链的定理 · 网络的优化论 · 群体的决策论
+site_author: Zhang Linghao
+site_url: https://zlhad.top/wireless-theory-tutorials/
+repo_url: https://github.com/ZLHad/wireless-theory-tutorials
+repo_name: ZLHad/wireless-theory-tutorials
+edit_uri: edit/main/site/docs/
+copyright: 'Copyright &copy; 2026 Zhang Linghao (National University of Singapore &amp; Nanjing University of Posts and Telecommunications) · 正文与图采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a> 许可，代码采用 MIT 许可'
+
+docs_dir: docs
+validation:
+  anchors: warn
+use_directory_urls: false
+
+theme:
+  name: material
+  language: zh
+  # 不用 Google Fonts（国内常加载失败且阻塞渲染），正文用系统字体
+  font: false
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: red
+      toggle:
+        icon: material/brightness-7
+        name: 切换深色
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: red
+      toggle:
+        icon: material/brightness-4
+        name: 切换浅色
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - content.action.edit
+    - search.highlight
+    - search.suggest
+
+nav:
+  - 总览: index.md
+  - 导览篇 · 领域画像:
+      - guide/index.md
+      - "领域地图": guide/01-field-map.md
+      - "学习路径": guide/02-learning-paths.md
+      - "开篇之作": guide/03-seminal-papers.md
+      - "时间线与标准": guide/04-timeline-standards.md
+      - "八条线索": guide/05-eight-threads.md
+      - "方向的生命周期": guide/06-direction-lifecycle.md
+  - 预备篇 · 基础教程:
+      - part0/index.md
+      - "1 · 电磁波与天线": part0/01-em-waves-antennas.md
+      - "2 · 无线信道入门": part0/02-wireless-channel-basics.md
+      - "3 · 数字通信一页通": part0/03-digital-communications.md
+      - "4 · 信息论基础": part0/04-information-theory-basics.md
+      - "5 · 多天线 MIMO": part0/05-mimo.md
+      - "6 · 无线网络": part0/06-wireless-networks.md
+      - "7 · 优化基础": part0/07-optimization-basics.md
+      - "8 · 决策与强化学习": part0/08-reinforcement-learning.md
+      - "9 · 新概念图景（一）": part0/09-new-landscape.md
+      - "10 · 新概念图景（二）": part0/10-new-phy-dof.md
+      - "11 · 新概念图景（三）": part0/11-new-network-frontiers.md
+  - 第一部 · 环境的科学:
+      - part1/index.md
+      - "1 · 序章：随机性是谎言": part1/01-lie-of-randomness.md
+      - "2 · 确定性根基": part1/02-maxwell-foundations.md
+      - "3 · 统计建模谱系": part1/03-statistical-lineage.md
+      - "4 · 空间结构定理": part1/04-spatial-structure.md
+      - "5 · 确定性复兴": part1/05-deterministic-revival.md
+      - "6 · 逆向箭头": part1/06-inverse-problem.md
+      - "7 · 信道地图学": part1/07-channel-cartography.md
+      - "8 · 基本问题 I": part1/08-dimension-and-prediction.md
+      - "9 · 基本问题 II": part1/09-exchange-and-universality.md
+      - "10 · 研究纲领": part1/10-research-agenda.md
+  - 第二部 · 链的定理:
+      - part2/index.md
+      - "1 · 序章：四个箭头，零条链定理": part2/01-four-arrows.md
+      - "2 · Blackwell 排序": part2/02-blackwell.md
+      - "3 · 任务-知识格": part2/03-task-knowledge-lattice.md
+      - "4 · 环境泛化": part2/04-environment-generalization.md
+      - "5 · 认知回路": part2/05-cognitive-triangle.md
+      - "6 · 端到端误差预算": part2/06-error-budget.md
+      - "7 · 研究纲领": part2/07-research-agenda.md
+  - 第三部 · 网络的优化论:
+      - part3/index.md
+      - "1 · 序章：三座大山": part3/01-three-mountains.md
+      - "2 · 经典地基：注水到 NUM": part3/02-classical-foundations.md
+      - "3 · 非凸时代": part3/03-nonconvex-era.md
+      - "4 · 时序决策全景": part3/04-sequential-uncertainty.md
+      - "5 · 预测的价目表": part3/05-price-of-prediction.md
+      - "6 · 协同的最小话费": part3/06-communication-lower-bounds.md
+      - "7 · 分层的代价": part3/07-price-of-layering.md
+      - "8 · 计算网络的容量": part3/08-computing-network-capacity.md
+      - "9 · 研究纲领": part3/09-research-agenda.md
+  - 第四部 · 群体的决策论:
+      - part4/index.md
+      - "1 · 序章：一个反例统治六十年": part4/01-one-counterexample.md
+      - "2 · 团队决策论": part4/02-team-decision-theory.md
+      - "3 · 信息结构相图": part4/03-information-structure-phase-diagram.md
+      - "4 · 协作的信息论": part4/04-coordination-information-theory.md
+      - "5 · 共享模型协商": part4/05-shared-world-model.md
+      - "6 · 学习动力学": part4/06-learning-dynamics.md
+      - "7 · 平均场": part4/07-mean-field.md
+      - "8 · 网络博弈": part4/08-network-games.md
+      - "9 · 研究纲领": part4/09-research-agenda.md
+  - 附录:
+      - 符号表: notation.md
+      - 术语表: glossary.md
+      - 开放问题总表: open-problems.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - def_list
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid-src
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.mark
+  - toc:
+      permalink: "#"
+      toc_depth: 3
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+
+extra_javascript:
+  - javascripts/mathjax-config.js
+  - javascripts/mathjax/tex-chtml.js
+  - javascripts/mermaid.min.js
+  - javascripts/mermaid-init.js
+
+extra_css:
+  - stylesheets/extra.css

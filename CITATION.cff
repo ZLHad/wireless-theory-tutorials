@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "如果引用本书，请按下面的信息引用。"
+title: "理论地基·四部曲：从环境到群体，无线智能网络缺失的四层理论地基"
+authors:
+  - family-names: Zhang
+    given-names: Linghao
+    affiliation: "National University of Singapore & Nanjing University of Posts and Telecommunications"
+url: "https://zlhad.top/wireless-theory-tutorials/"
+repository-code: "https://github.com/ZLHad/wireless-theory-tutorials"
+license: CC-BY-NC-SA-4.0
+date-released: 2026-10-02

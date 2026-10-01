@@ -1,0 +1,23 @@
+# 只公开电子书本身：站点、统计图脚本、符号表与术语表工具，以及根目录这几个说明文件。
+# 其余目录是本地的写作档案，一律不进仓库（先全部忽略，再逐个放行）。
+/*
+!/.gitignore
+!/.github/
+!/README.md
+!/LICENSE
+!/LICENSE-CODE
+!/THIRD_PARTY_NOTICES.md
+!/CITATION.cff
+!/requirements.txt
+!/requirements-tools.txt
+!/site/
+!/charts/
+!/notation-glossary/
+
+# 构建产物与可再生成的中间文件
+/site/site/
+/charts/prev/
+/notation-glossary/tools/scan.json
+/notation-glossary/tools/anchors.json
+__pycache__/
+.DS_Store
