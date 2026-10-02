@@ -4,6 +4,8 @@
 
 作者：Zhang Linghao（National University of Singapore & Nanjing University of Posts and Telecommunications）
 
+联系：<zhangczssx@gmail.com> · <zhanglinghao@u.nus.edu>
+
 在线阅读：<https://zlhad.top/wireless-theory-tutorials/>
 
 这是一本开放的中文电子书，写给学过高数、线性代数、概率和信号与系统的本科高年级学生与研究生，也写给想找研究方向的人。预备篇从本科水平讲起，把读懂前沿所需的无线通信基础讲透；四部沿着"环境 → 信道 → 任务 → 网络 → 群体"这条线，先讲清已有的经典理论，再指出 AI 原生无线网络底下还没有定理的地方。
@@ -46,7 +48,7 @@ mkdocs serve -f site/mkdocs.yml
 
 ## 反馈
 
-发现错误或有建议，欢迎提 Issue，也可以在网页上点每页正文右上角的编辑按钮直接提交修改。
+发现错误或有建议，欢迎[提 Issue](https://github.com/ZLHad/wireless-theory-tutorials/issues)，也可以发邮件给作者（地址见上）。
 
 ## 许可
 

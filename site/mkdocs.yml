@@ -4,7 +4,8 @@ site_author: Zhang Linghao
 site_url: https://zlhad.top/wireless-theory-tutorials/
 repo_url: https://github.com/ZLHad/wireless-theory-tutorials
 repo_name: ZLHad/wireless-theory-tutorials
-edit_uri: edit/main/site/docs/
+# 不显示编辑按钮：仓库对他人只读，反馈走 Issue 或邮件
+edit_uri: ''
 copyright: 'Copyright &copy; 2026 Zhang Linghao (National University of Singapore &amp; Nanjing University of Posts and Telecommunications) · 正文与图采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a> 许可，代码采用 MIT 许可'
 
 docs_dir: docs
@@ -44,7 +45,6 @@ theme:
     - navigation.footer
     - toc.follow
     - content.code.copy
-    - content.action.edit
     - search.highlight
     - search.suggest
 

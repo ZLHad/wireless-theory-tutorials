@@ -4,6 +4,8 @@
 
 作者：Zhang Linghao（National University of Singapore & Nanjing University of Posts and Telecommunications）
 
+联系：<zhangczssx@gmail.com> · <zhanglinghao@u.nus.edu>
+
 这个站点有两层用途。第一层是入门：导览篇画出无线通信领域的全貌和各个前沿方向卡在哪里，预备篇从本科水平讲起，把读懂四部所需的基础讲透。第二层是一个研究纲领：四部沿着"环境 → 信道 → 任务 → 网络 → 群体"这条线，把"AI 原生网络"底下**还没有定理的地方**系统地暴露出来。每一部都由浅入深，先讲清已有的科学（经典定理与谱系），再指出真正的空白（前沿开放问题），最后给出可操作的研究纲领。
 
 ## 体系总图
@@ -66,8 +68,8 @@ flowchart TB
 
 这是一本开放的电子书。预备篇和四部共 46 章，约 61 万汉字，另有导览篇 6 页和符号表、术语表、开放问题总表 3 份附录。它写给学过高数、线性代数、概率和信号与系统的本科高年级学生和研究生，也写给想找研究方向的人。书里不出习题，篇幅都花在三件事上：把概念和推导讲透，把各部分之间的联系讲清楚，把前沿还缺什么摆出来。
 
-全书的源文件、统计图的生成脚本和两张附录表的生成工具都在 [GitHub 仓库](https://github.com/ZLHad/wireless-theory-tutorials)里。发现错误或有建议，欢迎在仓库里提 Issue，也可以点每页正文右上角的编辑按钮直接提交修改。正文与图采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans) 许可：转载和改编请署名，不得用于商业目的，改编后的作品须以相同许可发布。
+全书的源文件、统计图的生成脚本和三份附录的生成工具都在 [GitHub 仓库](https://github.com/ZLHad/wireless-theory-tutorials)里。发现错误或有建议，欢迎在仓库里[提 Issue](https://github.com/ZLHad/wireless-theory-tutorials/issues)，也可以发邮件给作者（地址见本页开头）。正文与图采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans) 许可：转载和改编请署名，不得用于商业目的，改编后的作品须以相同许可发布。
 
 ---
 
-*2026-08 起笔，2026-09 四部完稿：源于一场关于"AI 辅助理论证明时代，通信领域还剩哪些本质问题"的对话。*
+*2026-08 起笔，2026-09 四部完稿。*
