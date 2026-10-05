@@ -222,7 +222,7 @@ def scan_file(rel):
                 continue
             hm = re.match(r"^(#{1,6})\s+(.*?)\s*#*\s*$", line)
             if hm:
-                headings.append({"line": ln, "level": len(hm.group(1)), "text": hm.group(2)})
+                headings.append({"line": ln, "level": len(hm.group(1)), "text": re.sub(r"\s*\{#[^}]*\}$", "", hm.group(2))})  # 去掉标题末尾的 {#锚点}
         # display math blocks: lines that are exactly $$ open/close, or $$...$$ on one line
         if in_disp:
             if st.endswith("$$"):

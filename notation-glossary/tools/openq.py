@@ -17,6 +17,7 @@ PART_SHORT = {'part1': '第一部', 'part2': '第二部', 'part3': '第三部', 
 
 
 def squash(t):
+    t = re.sub(r'^\s*\d+(?:\.\d+)+\s+', '', t)   # 标题开头的节号（如 4.3、4.3.1）不参与匹配
     return re.sub(r'[\s"“”「」]+', '', t)
 
 
@@ -113,16 +114,46 @@ def norm(lab):
 
 
 def count(page):
+    """章末"开放问题"一节的条目计数。按条目块解析：
+    题目行 = 带【】或以 Q/P 编号开头的粗体行、或顶层列表项、或粗体开头的段落；
+    题目下的分条细节、"精确陈述/第一步"等粗体引导段、缩进续行都归入该条；
+    以冒号结尾的说明句后面的列表、"预告"段与分组小标题不计。状态取整块里第一个【】。"""
     lines = open(os.path.join(DOCS, page), encoding='utf-8').read().split('\n')
-    i = next(k for k, l in enumerate(lines) if l.strip() == '## 开放问题')
+    i = next(k for k, l in enumerate(lines) if re.sub(r'\s*\{#[^}]*\}$', '', l.strip()) == '## 开放问题')
     j = next((k for k in range(i + 1, len(lines)) if lines[k].startswith('## ')), len(lines))
-    c = collections.Counter()
+    labq = lambda l: re.search(r'【[^】]*】', l) or re.match(r'^\*\*(Q\d|P\d)', l)
+    blocks, cur, in_item, prev, trailing, after_prose = [], None, False, '', False, False
     for l in lines[i + 1:j]:
-        if re.match(r'^\*\*[^*]+\*\*\s*$', l) or l.startswith('**预告'):
+        if not l.strip():
             continue
-        if re.match(r'^(\d+\. |- |\*\*)', l):
-            m = re.search(r'【([^】]*)】', l)
-            c[norm(m.group(1) if m else None)] += 1
+        whole_bold = re.match(r'^\*\*[^*]+\*\*\s*$', l)
+        start = False
+        if not re.match(r'^(\d+\. |- )', l):
+            trailing = False
+        if l.startswith('**预告'):
+            in_item, cur = False, None
+        elif whole_bold and not labq(l):
+            in_item, cur, after_prose = False, None, False   # 分组小标题
+        elif whole_bold or (l.startswith('**') and (labq(l) or not in_item)):
+            start, in_item = True, True
+        elif re.match(r'^(\d+\. |- )', l):
+            if blocks and cur is None and (after_prose or trailing):
+                trailing = True                         # 条目列完以后、说明段落后面的列表不计
+            elif not in_item:
+                start = True
+        elif not l.startswith(' '):
+            if not in_item:
+                cur = None                              # 说明段
+                after_prose = True
+        if start:
+            cur = [l]; blocks.append(cur); after_prose = False
+        elif cur is not None:
+            cur.append(l)
+        prev = l
+    c = collections.Counter()
+    for blk in blocks:
+        m = re.search(r'【([^】]*)】', '\n'.join(blk))
+        c[norm(m.group(1) if m else None)] += 1
     return c
 
 
