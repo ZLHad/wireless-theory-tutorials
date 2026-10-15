@@ -562,9 +562,9 @@ flowchart TB
 10. M. Franceschetti, 《On Landau's Eigenvalue Theorem and Information Cut-Sets》, IEEE Transactions on Information Theory, 61(9), 2015. https://arxiv.org/abs/1405.1761
 11. A. Pizzo, A. Lozano, 《On Landau's Eigenvalue Theorem for Line-of-Sight MIMO Channels》, IEEE Wireless Communications Letters, 2022/2023. https://arxiv.org/abs/2210.05631
 12. A. Pizzo, A. de Jesus Torres, L. Sanguinetti, T. L. Marzetta, 《Nyquist Sampling and Degrees of Freedom of Electromagnetic Fields》, IEEE Transactions on Signal Processing, vol. 70, 2022. https://arxiv.org/abs/2109.10040
-13. H. Lu, Y. Zeng, C. You, Y. Han, J. Zhang, Z. Wang, Z. Dong, S. Jin, C.-X. Wang, T. Jiang, X. You, R. Zhang, 《A Tutorial on Near-Field XL-MIMO Communications Towards 6G》, IEEE Communications Surveys & Tutorials, 2024（卷期待核）. https://arxiv.org/abs/2310.11044
-14. 《Near-Field Communications: A Comprehensive Survey》, arXiv:2401.05900, 2024（作者名单待核）. https://arxiv.org/abs/2401.05900
+13. H. Lu, Y. Zeng, C. You, Y. Han, J. Zhang, Z. Wang, Z. Dong, S. Jin, C.-X. Wang, T. Jiang, X. You, R. Zhang, 《A Tutorial on Near-Field XL-MIMO Communications Toward 6G》, IEEE Communications Surveys & Tutorials, 26(4):2213–2257, 2024. DOI: 10.1109/COMST.2024.3387749. https://arxiv.org/abs/2310.11044
+14. Y. Liu, C. Ouyang, Z. Wang, J. Xu, X. Mu, A. L. Swindlehurst, 《Near-Field Communications: A Comprehensive Survey》, IEEE Communications Surveys & Tutorials, 27(3):1687–1728, 2025. DOI: 10.1109/COMST.2024.3475884. https://arxiv.org/abs/2401.05900
 15. C. Ouyang, B. Zhao, X. Zhang, Y. Liu, 《A Concise Tutorial for Analyzing Electromagnetic Degrees of Freedom for CAPA Systems》, arXiv:2502.14404, 2025. https://arxiv.org/abs/2502.14404
 16. Z. Wang, C. Ouyang, K. R. R. Ranasinghe, S. S. A. Yuan, G. T. F. de Abreu, E. Björnson, Y. Liu, 《Electromagnetic Signal and Information Theory: A Continuous-Aperture Array Perspective》, arXiv:2605.12910, 2026. https://arxiv.org/abs/2605.12910
 17. X. Xu, Y. Zeng, 《How Much Data is Needed for Channel Knowledge Map Construction?》, IEEE Transactions on Wireless Communications, 2024, DOI: 10.1109/TWC.2024.3397964. https://arxiv.org/abs/2312.06966
-18. 《Channel Knowledge Map Construction: Recent Advances and Open Challenges》, arXiv:2511.04944, 2025（作者待核）. https://arxiv.org/abs/2511.04944
+18. Z. Ren, J. Zhou, J. Xu, L. Qiu, Y. Zeng, H. Hu, J. Zhang, R. Zhang, 《Channel Knowledge Map Construction: Recent Advances and Open Challenges》, IEEE Wireless Communications, 2026（在线发表）. DOI: 10.1109/MWC.2026.3668205. https://arxiv.org/abs/2511.04944

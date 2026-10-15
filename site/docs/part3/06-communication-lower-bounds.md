@@ -241,6 +241,7 @@ $$
     $$
 
     其中 $A$ 为绝对常数，$n$ 大时 $A\approx 1/\sqrt{2\pi e}\approx 0.24$。
+
 5. 于是 $2^T\ge|S|\ge N(\varepsilon)$，取对数：
 
     $$

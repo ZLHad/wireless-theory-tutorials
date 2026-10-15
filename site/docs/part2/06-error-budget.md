@@ -355,7 +355,10 @@ $$
 
     Brewster 角是 TM 波完全不反射的入射角，从法线量起满足 $\tan\theta_{\mathrm{B}}=\sqrt{\varepsilon'}$，$\varepsilon'=5$ 时约 $66^\circ$，即电波与墙面约成 $24^\circ$ 的斜掠方向。真正贴墙的掠入射（$\theta\to90^\circ$）处，两种极化的反射系数都趋于 $-1$，对 $\varepsilon'$ 反而不敏感。
 
-    这是"哪一环最贵"的关键非线性点。工程上，入射角落在 Brewster 角附近（常见建材 $\varepsilon'=3$–$7$ 对应约 $60^\circ$–$69^\circ$）的反射径，对材质误差最敏感【表述待核：Brewster 角附近发散的定量刻画须核 ITU-R P.2040 附录的完整公式】。
+    这是"哪一环最贵"的关键非线性点。工程上，入射角落在 Brewster 角附近（常见建材 $\varepsilon'=3$–$7$ 对应约 $60^\circ$–$69^\circ$）的反射径，对材质误差最敏感。用 ITU-R P.2040 的单界面 Fresnel 公式（式 (31a)(31b)）[11] 可以直接算出这个量级【本站演算】：$\varepsilon'=5$ 的无损墙面，TM 分量在 $65^\circ$ 与 $67^\circ$ 处的灵敏度分别约 $+21$ 与 $-16$ dB/单位，是法向入射 $0.97$ 的二十倍上下，正好在 Brewster 角上发散；TE 分量在同一角度只有约 $0.43$ dB/单位。
+
+    真实墙体有损耗，零点会被抬成一个有限深的谷底，P.2040 称之为伪 Brewster 角。按该建议书表 3 的混凝土参数，1–28 GHz 时谷底在 $66.5^\circ$ 附近，深约 $-30$ 到 $-36$ dB，灵敏度的峰值约 6–11 dB/单位，仍是法向入射的 7 到 13 倍。另一面是，这样的反射径本身已经弱了二三十 dB，它对总接收功率有多大影响，要看它在多径里占多大份额。
+
 - **材质误差与几何误差在 dB 域独立可加**：一个来自 $\Gamma$，一个来自路径长度与相位。这是引理 6.1(b) 的适用场景。
 
 **到此为止我们得到了什么**
@@ -1420,11 +1423,11 @@ Equitz–Cover [1] 与 Rimoldi [2] 解决了单终端。CEO / 多描述设置下
 8. T. M. Cover, J. A. Thomas, 《Elements of Information Theory》, 2nd ed., Wiley, 2006, §10.3.3（反注水）. https://doi.org/10.1002/047174882X
 9. F. J. Harris, 《On the use of windows for harmonic analysis with the discrete Fourier transform》, *Proc. IEEE*, vol. 66, no. 1, pp. 51–83, 1978. https://doi.org/10.1109/PROC.1978.10837
 10. H. L. Van Trees, 《Optimum Array Processing (Detection, Estimation, and Modulation Theory, Part IV)》, Wiley-Interscience, 2002. https://doi.org/10.1002/0471221104
-11. ITU-R, 《Effects of building materials and structures on radiowave propagation above about 100 MHz》, Recommendation ITU-R P.2040（-3, 2023；-4, 2025-09）. https://www.itu.int/rec/R-REC-P.2040/en 【表述待核：混凝土条目 $a=5.24$、$b=0$、$c=0.0462$、$d=0.7822$ 出自 P.2040-3 表 3，频率适用区间须对照 P.2040-4 正式表格再核】
+11. ITU-R, 《Effects of building materials and structures on radiowave propagation above about 100 MHz》, Recommendation ITU-R P.2040-3, 2023-08；现行版 P.2040-4（2025-09）题名改为《Effects of building materials and structures on radio-wave propagation in the range of 1 MHz to 450 GHz》. https://www.itu.int/rec/R-REC-P.2040/en （两版表 3 的混凝土条目相同：$a=5.24$、$b=0$、$c=0.0462$、$d=0.7822$，适用 1–100 GHz；-4 版另列 110–330 GHz 一行。单界面反射系数见式 (31a)(31b)。）
 12. X. Xu, Y. Zeng, 《How much data is needed for channel knowledge map construction?》, arXiv:2312.06966, 2023（后发表于 *IEEE Trans. Wireless Commun.*）. https://arxiv.org/abs/2312.06966 【本章用的是其 Fig. 4（$k=1$、参数已知）的两个数据点，$\gamma$ 为本站局部拟合】
 13. J. Shao, J. Zhang, 《BottleNet++: An end-to-end approach for feature compression in device-edge co-inference systems》, *Proc. IEEE ICC Workshops*, 2020. https://doi.org/10.1109/ICCWorkshops49005.2020.9145068
 14. J. Shao, Y. Mao, J. Zhang, 《Learning task-oriented communication for edge inference: An information bottleneck approach》, *IEEE J. Sel. Areas Commun.*, vol. 40, no. 1, pp. 197–211, 2022. https://doi.org/10.1109/JSAC.2021.3126087
 15. E. Torgersen, 《Comparison of Statistical Experiments》, Cambridge Univ. Press, 1991. https://doi.org/10.1017/CBO9780511666353
 16. J. Hoydis et al., 《Sionna RT: Differentiable ray tracing for radio propagation modeling》, arXiv:2303.11103, 2023.【预印本·未评审】 https://arxiv.org/abs/2303.11103
 
-*未单列的备查条目*：Le Cam 1964 的近似充分性与风险界、Blackwell 1953 的等价比较按[第 2 章参考文献 4、2](02-blackwell.md)编号引用；高保真 RF 建图与网络数字孪生的评估见 arXiv:2507.19173【预印本·未评审】，本章只在 §6.8 场景一作一句提示，未据其写入任何数字；混凝土反射三档、射线追踪校准 RMSE 3–6 dB、行人遮挡 21–30 dB 等数字沿用[第一部第 5 章](../part1/05-deterministic-revival.md)的口径【其中 RT 校准 RMSE 的原始出处为二手转述，表述待核；出处更硬的替代数字是 NYURay 报告的室内办公定向多径功率误差标准差 $<3$ dB、室外/工厂 $<2$ dB】。
+*未单列的备查条目*：Le Cam 1964 的近似充分性与风险界、Blackwell 1953 的等价比较按[第 2 章参考文献 4、2](02-blackwell.md)编号引用；高保真 RF 建图与网络数字孪生的评估见 arXiv:2507.19173【预印本·未评审】，本章只在 §6.8 场景一作一句提示，未据其写入任何数字；混凝土反射三档、射线追踪校准 RMSE 3–6 dB、行人遮挡 21–30 dB 等数字沿用[第一部第 5 章](../part1/05-deterministic-revival.md)的口径（RT 校准 RMSE 3–6 dB 的依据见[第一部 5.4.3 节](../part1/05-deterministic-revival.md#543-校准后的引擎停在哪里三组实证数字)：商用引擎室内 2.4/5 GHz 约 5 dB，NYURay 在 6.75/16.95 GHz 校准后 LOS 3.2 dB、NLOS 5.8 dB）。

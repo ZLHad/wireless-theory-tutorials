@@ -930,7 +930,7 @@ $$
     - 第 5 章 §5.3 的对偶效应判据说，"动作进不进后验方差"决定要不要联合设计。多决策者下还有第二种耦合：一个人的动作是另一个人的观测（signaling）。
     - Witsenhausen 1968 [9] 的反例：LQG 下非线性控制器严格优于线性，因为控制器在用动作"说话"，动作本身成了信号。
     - 链上多点决策不能拆开。这是本部的分环记账（定理 2.4 的沿链累加与第 6 章的误差预算）在多决策者下必须先立的警示牌。
-- **公共知识要花钱。** 第三部第 6 章的 $C(\varepsilon)$（两小区 $\lesssim56$ 比特）与本部第 3 章的格的交（Gács–Körner 公共信息），在多决策者下合成一个问题：为了让两个决策者的知识"对齐到能协同"，最少要交换多少。团队理论（Marschak–Radner，出处待核，本章不编号）是它的经典框架。
+- **公共知识要花钱。** 第三部第 6 章的 $C(\varepsilon)$（两小区 $\lesssim56$ 比特）与本部第 3 章的格的交（Gács–Körner 公共信息），在多决策者下合成一个问题：为了让两个决策者的知识"对齐到能协同"，最少要交换多少。团队理论（Marschak–Radner 1972，书目见[第四部第 2 章](../part4/02-team-decision-theory.md#参考文献)，本章不编号）是它的经典框架。
 
 [第四部](../part4/index.md)从这里开始。当"谁知道什么"成为变量：
 
@@ -1036,4 +1036,4 @@ $$
 20. D. Akdemir, 《Le Cam distortion: A decision-theoretic framework for robust transfer learning》, arXiv:2512.23617v1, 2025；D. Akdemir, 《Approximate computation via Le Cam simulability》, arXiv:2512.24860, 2025.【均为预印本·未评审】 https://arxiv.org/abs/2512.23617
 21. E. N. Torgersen, 《Comparison of experiments when the parameter space is finite》, *Z. Wahrscheinlichkeitstheorie verw. Gebiete*, vol. 16, no. 3, pp. 219–249, 1970. https://doi.org/10.1007/BF00534598 【全文未取得】
 
-*未单列的备查条目*：Papailiopoulos 2026 年 8 月的 MIMO 检测手稿（2026-09-16 已上 arXiv:2609.19405，见[第一部第 10 章](../part1/10-research-agenda.md) Q4 与[第三部第 9 章](../part3/09-research-agenda.md)）；Marschak–Radner 1972 团队理论（页码级出处待核，正文只以名称提及）；Huang–Schultheiss 1963、Harris 1978、Sionna RT 2023 按[第 6 章](06-error-budget.md)与[第 4 章](04-environment-generalization.md)的参考文献编号引用；3GPP TR 38.843 的泛化测试 Case 1–4 按[第 4 章参考文献 14](04-environment-generalization.md)；Jaldén–Ottersten 2005 球译码复杂度的卷期页素材未取回，正文未引用。有限实验 Blackwell 序的 LP 判定按标准事实陈述，不编造出处。
+*未单列的备查条目*：Papailiopoulos 2026 年 8 月的 MIMO 检测手稿（2026-09-16 已上 arXiv:2609.19405，见[第一部第 10 章](../part1/10-research-agenda.md) Q4 与[第三部第 9 章](../part3/09-research-agenda.md)）；Marschak–Radner 1972 团队理论（《Economic Theory of Teams》，Yale University Press；正文只以名称提及，书目见[第四部第 2 章参考文献 2](../part4/02-team-decision-theory.md#参考文献)）；Huang–Schultheiss 1963、Harris 1978、Sionna RT 2023 按[第 6 章](06-error-budget.md)与[第 4 章](04-environment-generalization.md)的参考文献编号引用；3GPP TR 38.843 的泛化测试 Case 1–4 按[第 4 章参考文献 14](04-environment-generalization.md)；Jaldén–Ottersten 2005 球译码复杂度的卷期页素材未取回，正文未引用。有限实验 Blackwell 序的 LP 判定按标准事实陈述，不编造出处。

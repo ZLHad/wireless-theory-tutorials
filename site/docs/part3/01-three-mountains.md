@@ -582,7 +582,7 @@ flowchart TB
 | 学习型直接映射 | Sun 等 L2O [23] | 用 DNN 逼近 WMMSE 的输入输出映射，推理时间降数个量级 | 逼近误差与最优性差距无界；换场景需重训 |
 | 图神经网络 | REGNN [24]、Shen 等 [25] | **唯一自带理论刻画的一支**：置换等变性使其可迁移到不同网络规模，并有可扩展性与泛化分析 | 给的是"**这个架构能做到什么**"，不是"任何架构至少要付出什么" |
 | 深度强化学习 | 切片资源管理综述 [22] | 免模型、在线适应未知动态；处理时序耦合 | 无最坏情形保证；样本复杂度与安全性缺界 |
-| 扩散 / 生成式优化 | Du 等教程 [26]、Liang 等 [27] | 学"解的分布"而非单点解，可与 DRL 结合、处理多模态解空间 | Liang 等**声称**有生成式优于判别式的理论论证，其强度尚待核实；无最优性界 |
+| 扩散 / 生成式优化 | Du 等教程 [26]、Liang 等 [27] | 学"解的分布"而非单点解，可与 DRL 结合、处理多模态解空间 | Liang 等称证明了生成式优于判别式，实为在假设的出错概率下比较两个期望下界，下界更小推不出实际更优【本站判断】；无最优性界 |
 | L2O / 深度展开 | Chen 等基准 [28] | 把算法本身参数化并学习；Open-L2O 提供统一基准 | 收敛与泛化保证零散；无问题类级别的极限 |
 
 !!! note "关于 GNN 这一支的特别说明"
@@ -697,7 +697,7 @@ flowchart TD
 3. **协同的最小话费：非凸情形。** 凸 + 随机 + 间歇通信这一格已被闭合（差对数因子）[6]；非凸目标、异构数据、信道受限的格子则完全空白。此外，Tsitsiklis–Luo 下界的确切形式（常被转述为 $\Omega(d^2)$ 量级）及其成立的算法类、精度假设，在二手文献中转述不一致，需回到原文核算 [5]。【开放 / 部分结果】详见[第 6 章](06-communication-lower-bounds.md)。
 4. **分层的代价：有损时损多少。** 分层即优化分解框架主要回答"何时分层无损" [30]；一般性的"分层损失上界"至今不存在。PoA $=4/3$ 提供了形状上的先例 [15]，但拥塞博弈与协议分层的结构差异很大，能否迁移是开放的。【开放】详见[第 7 章](07-price-of-layering.md)。
 5. **LLM 推理调度的排队论基础。** 推理时间可变、KV cache 造成动态内存约束、多种抢占策略并存，这些经典排队论都没有覆盖。"预测如何最有效地改进调度决策"被明确列为公开问题 [20]。【开放】
-6. **启发式的平均情形之谜。** 为什么只保证收敛到稳定点的 WMMSE 在实践中表现远好于其理论保证？这个落差是实例分布的性质、算法的隐式偏好，还是问题类的结构？相关地，有工作声称能论证生成式模型相对判别式模型的优势 [27]，但该论证的强度尚未核实。【开放】详见[第 3 章](03-nonconvex-era.md)。
+6. **启发式的平均情形之谜。** 为什么只保证收敛到稳定点的 WMMSE 在实践中表现远好于其理论保证？这个落差是实例分布的性质、算法的隐式偏好，还是问题类的结构？相关地，有工作称证明了生成式模型相对判别式模型的优势 [27]。按本站的读法，那是在人为设定的出错概率下比较两个期望下界，下界更小并不推出实际更优，所以这个问题仍然是开的。【开放】详见[第 3 章](03-nonconvex-era.md)。
 
 本章最后留给读者的，是那条 $\Theta(\bar{D}^{-2})$ 的曲线。二十四年前，有人在这个领域做到过一次，写下了一条对**任何算法**都成立的极限。本部想问的是：为什么只有一次？
 
@@ -729,7 +729,7 @@ flowchart TD
 24. M. Eisen, A. Ribeiro, 《Optimal Wireless Resource Allocation with Random Edge Graph Neural Networks》, IEEE Transactions on Signal Processing, 68:2977–2991, 2020. https://arxiv.org/abs/1909.01865
 25. Y. Shen, Y. Shi, J. Zhang, K. B. Letaief, 《Graph Neural Networks for Scalable Radio Resource Management: Architecture Design and Theoretical Analysis》, IEEE Journal on Selected Areas in Communications, 39(1):101–115, 2021. DOI: 10.1109/JSAC.2020.3036965
 26. H. Du et al., 《Enhancing Deep Reinforcement Learning: A Tutorial on Generative Diffusion Models in Network Optimization》, IEEE Communications Surveys & Tutorials, 2024. DOI: 10.1109/COMST.2024.3400011
-27. R. Liang et al., 《Diffusion Models as Network Optimizers: Explorations and Analysis》, arXiv:2411.00453, 2024/2025. https://arxiv.org/abs/2411.00453
+27. R. Liang et al., 《Diffusion Models as Network Optimizers: Explorations and Analysis》, IEEE Internet of Things Journal, 12(10):13183–13193, 2025. DOI: 10.1109/JIOT.2025.3528955；arXiv:2411.00453. https://arxiv.org/abs/2411.00453
 28. T. Chen, X. Chen, W. Chen, H. Heaton, J. Liu, Z. Wang, W. Yin, 《Learning to Optimize: A Primer and A Benchmark》, Journal of Machine Learning Research, 23:189:1–189:59, 2022. https://www.jmlr.org/papers/volume23/21-0308/21-0308.pdf
 29. C. Yu, G. Shi, S.-J. Chung, Y. Yue, A. Wierman, 《The Power of Predictions in Online Control》, NeurIPS 2020. https://proceedings.neurips.cc/paper/2020/hash/155fa09596c7e18e50b58eb7e0c6ccb4-Abstract.html
 30. M. Chiang, S. H. Low, A. R. Calderbank, J. C. Doyle, 《Layering as Optimization Decomposition: A Mathematical Theory of Network Architectures》, Proceedings of the IEEE, 95(1):255–312, 2007. DOI: 10.1109/JPROC.2006.887322

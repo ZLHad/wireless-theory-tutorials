@@ -826,7 +826,7 @@ flowchart LR
 
 | 路线 | 代表结果 | 基准是什么 | 交付什么 |
 |---|---|---|---|
-| **竞争分析** | Jaillet 等 [15] | 整数规划定义的 hindsight optimal | 在任意（对抗）到达下**不存在**常数竞争比的确定性在线算法；一定条件下给出多项式时间、常数竞争比的在线算法（常数值待核） |
+| **竞争分析** | Jaillet 等 [15] | 整数规划定义的 hindsight optimal | 任意到达下，任何确定性在线算法的竞争比至少为 $\Omega(\sqrt n)$；请求同时到达、提示等长、显存不少于单个请求最大占用的两倍时，多项式时间的 MC-SF 算法为 $O(1)$ 竞争（原文未优化常数） |
 | **竞争分析** | Kong 等 [19] | 高并发极限下的离线最优 | 把请求看成时间–内存平面上**二维时空生长**的几何体，提出 Smallest Volume First，证明竞争比为 **3**，大幅改进此前最好的 **48**；证明技术为 volume-certificate，另有仅需极少信息的 1-bit 变体 |
 | **稳定性 / 流体** | Dai 等 [16] | 多类批处理网络的最大吞吐 | 一大类 **work-conserving**（只要有请求在等就不让 GPU 空闲）策略在含 DAG / fork-join 的 AI agent 工作流下达到最大吞吐；据此判定 **Orca 与 Sarathi-Serve 是吞吐最优的，而 FasterTransformer 与 vanilla vLLM 不是 maximally stable**。方法是**流体极限**（把大量离散请求近似成连续流动的「流体」，用确定性微分方程研究稳定性），不是 Lyapunov 漂移 |
 | **稳定性 / 流体** | Nie–Si–Zhou [17] | 稳定域边界 | 首个同时纳入算力约束与 GPU 内存约束的 LLM 推理排队框架，给出显式稳定 / 不稳定条件，可据到达率反算所需集群规模；实测与预测偏差通常在 10% 以内 |
@@ -922,7 +922,7 @@ FL 调度在文献里的性能语言是**第五种**：收敛速率。它与前�
 
     Chadaga–Modiano 研究排队网络中的联合路由与调度。边的传输代价未知，且只对被选中的边收到含噪观测（bandit feedback）。
 
-    他们把 drift-plus-penalty 与多臂赌博机的乐观估计结合，得到相对「知道到达与代价的 oracle 策略」的**次线性 regret $O(\sqrt T\log T)$，同时保持网络稳定** [22]。队列长度界的具体形式待核。
+    他们把 drift-plus-penalty 与多臂赌博机的乐观估计结合，得到相对「知道到达与代价的 oracle 策略」的**次线性 regret $O(\sqrt T\log T)$，同时保持网络稳定** [22]。稳定性一侧证的是速率稳定：时刻 $T$ 的总积压期望不超过 $O(\sqrt T\log T)$ 再除以终端积压代价 $C_B$，所以平均到每个时隙趋于零。这比已知统计时 drift-plus-penalty 给出的"平均队列有界"要弱。
 
     这是本章最直接的「框架开始互相说话」的证据：它同时说了稳定性和 regret 两种语言。但代价是模型被限定得很窄，只适用于特定网络结构、特定反馈模型。一般性的「安全探索 under stability」仍然开放。
 
@@ -965,7 +965,7 @@ FL 调度在文献里的性能语言是**第五种**：收敛速率。它与前�
 
 1. M. J. Neely, 《Stochastic Network Optimization with Application to Communication and Queueing Systems》, Morgan & Claypool, 2010, DOI 10.2200/S00271ED1V01Y201006CNT007. https://ee.usc.edu/stochastic-nets/
 2. L. Tassiulas, A. Ephremides, 《Stability properties of constrained queueing systems and scheduling policies for maximum throughput in multihop radio networks》, IEEE Transactions on Automatic Control, 37(12):1936–1948, 1992. https://ui.adsabs.harvard.edu/abs/1992ITAC...37.1936T/abstract
-3. Y. Mao, J. Zhang, K. B. Letaief, 《Dynamic Computation Offloading for Mobile-Edge Computing With Energy Harvesting Devices》, IEEE Journal on Selected Areas in Communications, 34(12), 2016（页码待核）, DOI 10.1109/JSAC.2016.2611964. https://arxiv.org/abs/1605.05488
+3. Y. Mao, J. Zhang, K. B. Letaief, 《Dynamic Computation Offloading for Mobile-Edge Computing With Energy Harvesting Devices》, IEEE Journal on Selected Areas in Communications, 34(12):3590–3605, 2016, DOI 10.1109/JSAC.2016.2611964. https://arxiv.org/abs/1605.05488
 4. Y. Mao, C. You, J. Zhang, K. Huang, K. B. Letaief, 《A Survey on Mobile Edge Computing: The Communication Perspective》, IEEE Communications Surveys & Tutorials, 19(4):2322–2358, 2017, DOI 10.1109/COMST.2017.2745201.
 5. L. Huang, S. Bi, Y.-J. A. Zhang, 《Deep Reinforcement Learning for Online Computation Offloading in Wireless Powered Mobile-Edge Computing Networks》, IEEE Transactions on Mobile Computing, 19(11):2581–2593, 2020, DOI 10.1109/TMC.2019.2928811. https://arxiv.org/abs/1808.01977
 6. S. Bi, L. Huang, H. Wang, Y.-J. A. Zhang, 《Lyapunov-Guided Deep Reinforcement Learning for Stable Online Computation Offloading in Mobile-Edge Computing Networks》, IEEE Transactions on Wireless Communications, 2021, DOI 10.1109/TWC.2021.3085319. https://arxiv.org/abs/2010.01370
@@ -984,7 +984,7 @@ FL 调度在文献里的性能语言是**第五种**：收敛速率。它与前�
 19. L. Kong, Q. Qi, Y. Ye, Z. Zhou, 《Geometry-Aware Online Scheduling for LLM Serving: From Theoretical Bound to System Practice》, arXiv:2606.22327, 2026. https://arxiv.org/abs/2606.22327
 20. R. Ao, G. Luo, D. Simchi-Levi, X. Wang, 《Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints》, arXiv:2504.11320, 2025（v4, 2026-06）. https://arxiv.org/abs/2504.11320
 21. R. Lin, Z. Ding, Z. Han, J. Zhang, 《Large-Scale LLM Inference with Heterogeneous Workloads: Prefill-Decode Contention and Asymptotically Optimal Control》, arXiv:2602.02987, 2026. https://arxiv.org/abs/2602.02987
-22. S. Chadaga, E. Modiano, 《Drift Plus Optimistic Penalty: A Learning Framework for Stochastic Network Optimization with Improved Regret Bounds》, arXiv:2509.03762, 2025. https://arxiv.org/abs/2509.03762
+22. S. Chadaga, E. Modiano, 《Drift Plus Optimistic Penalty—A Learning Framework for Stochastic Network Optimization》, IEEE Transactions on Networking, 34:6875–6890, 2026. DOI: 10.1109/TON.2026.3727182；会议版 IEEE INFOCOM 2025；arXiv:2509.03762. https://arxiv.org/abs/2509.03762
 23. H. H. Yang, Z. Liu, T. Q. S. Quek, H. V. Poor, 《Scheduling Policies for Federated Learning in Wireless Networks》, IEEE Transactions on Communications, 68(1):317–333, 2020, DOI 10.1109/TCOMM.2019.2944169.
 24. T. Nishio, R. Yonetani, 《Client Selection for Federated Learning with Heterogeneous Resources in Mobile Edge》, IEEE ICC 2019, DOI 10.1109/ICC.2019.8761315.
 25. M. Mitzenmacher, S. Vassilvitskii, 《Algorithms with Predictions》, Communications of the ACM, 65(7), 2022, DOI 10.1145/3528087.

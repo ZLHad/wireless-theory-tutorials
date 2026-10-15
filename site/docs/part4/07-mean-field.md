@@ -710,6 +710,7 @@ $1/\sqrt N$ 是涨落本身的尺度，$1/N$ 是涨落的平方。所以代价�
     - (iii) 关心的不是平均代价而是**尾事件**（越限、掉话、时延违约）。这类量的尺度直接由 $\mathrm{sd}(\Delta_N)$ 定，即 $1/\sqrt N$。
 
     第 (iii) 种在无线里最常见，7.7 节的算例 7.4 会把它算成一个吓人的数。
+
 - **一个量化对照。** 把代价的跟踪项从 $(\cdot)^2$ 换成 $|\cdot|$，遗憾变成 $\beta\,\mathbb E|\Delta_N|=\beta\sqrt{2/\pi}\,\sigma/[(1+\lambda)\sqrt N]$。来由分两步：
     1. 涨落把个体的跟踪误差平移了 $\beta\Delta_N$，而 $|\cdot|$ 在折角处对平移是一阶增长的，所以遗憾的量级是 $\beta|\Delta_N|$，不是它的平方。
     2. $\Delta_N$ 由中心极限定理近似高斯，高斯变量满足 $\mathbb E|Z|=\sqrt{2/\pi}\,\mathrm{sd}(Z)$，代入 $\mathrm{sd}(\Delta_N)$ 即得。

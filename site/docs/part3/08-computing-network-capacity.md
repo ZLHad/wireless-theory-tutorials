@@ -157,7 +157,7 @@ $$
 ### 8.2.3 字母表大小与计算增益
 
 !!! note "反直觉：计算容量依赖字母表大小"
-    网络编码的路由容量与编码容量都与 $|\mathcal{A}|$ 无关，计算容量不是。$q$ 元算术和在反向蝴蝶上的容量为 $2/\log_q(2q-1)$，$q\to\infty$ 时趋于 $2$，也就是趋于把整张网络的割容量完全用满。【表述待核：$q$ 元一般式源自 ISIT'09 摘要的二手转述 [6]；$q=2$ 的情形已由期刊版正文核实 [5]。】
+    网络编码的路由容量与编码容量都与 $|\mathcal{A}|$ 无关，计算容量不是。$q$ 元算术和在反向蝴蝶上的容量为 $2/\log_q(2q-1)$，$q\to\infty$ 时趋于 $2$，也就是趋于把整张网络的割容量完全用满。这个一般式是 [7] 的定理 6.3，可达的一侧用模 $2q-1$ 加法的编码；$q=2$ 的情形另见 [5] 的例 3.8【已解决】。
 
     **行为分析**
 
@@ -180,7 +180,7 @@ $$
 ![反向蝴蝶上的 q 元算术和：计算割集界随字母表爬向 2](../assets/charts/p3-08-1.svg#only-light){ .chart loading=lazy }
 ![反向蝴蝶上的 q 元算术和：计算割集界随字母表爬向 2](../assets/charts/p3-08-1-dark.svg#only-dark){ .chart loading=lazy }
 
-*怎么读这张图：第一条是计算割集界 $2/\log_q(2q-1)$，从 $q=2$ 的 1.262 慢慢爬到 $q=1024$ 的 1.818；第二条水平线是极限 2（割容量用满），第三条是路由与线性码的 1。横轴已经按 $\log_2 q$ 等距排开，爬升在这个刻度下仍然越来越缓：与 2 的差距按 $1/\log_2 q$ 衰减，"工程上永远吃不到那个 2"。$q=2$ 这一点的可达性已由期刊版核实；一般 $q$ 时这个界是否可达，见上方的【表述待核】。曲线按公式计算。*
+*怎么读这张图：第一条是计算割集界 $2/\log_q(2q-1)$，从 $q=2$ 的 1.262 慢慢爬到 $q=1024$ 的 1.818；第二条水平线是极限 2（割容量用满），第三条是路由与线性码的 1。横轴已经按 $\log_2 q$ 等距排开，爬升在这个刻度下仍然越来越缓：与 2 的差距按 $1/\log_2 q$ 衰减，"工程上永远吃不到那个 2"。这条界对每个 $q$ 都可达（[7] 定理 6.3），所以第一条线就是计算容量本身。曲线按公式计算。*
 
 !!! warning "为什么不能用蝴蝶网络 + XOR 来讲这个故事"
     模 2 和是有限域上的线性目标函数。有限域线性目标函数的割集界恒紧（下节定理 T3 [5]），所以讲不出任何"界不紧"的落差。另外，在反向蝴蝶上算 XOR 仍然是网络编码问题。
@@ -845,8 +845,8 @@ flowchart TB
 14. S.-W. Jeon, C.-Y. Wang, M. Gastpar, 《Computation over Gaussian Networks with Orthogonal Components》, IEEE Transactions on Information Theory, 60(12):7841–7861, 2014. DOI: 10.1109/TIT.2014.2364572（会议版见 IEEE ISIT 2013，pp. 2139–2143）
 15. M. Goldenbaum, H. Boche, S. Stańczak, 《Harnessing Interference for Analog Function Computation in Wireless Sensor Networks》, IEEE Transactions on Signal Processing, 61(20):4893–4906, 2013；及《Nomographic Functions: Efficient Computation in Clustered Gaussian Sensor Networks》, IEEE Transactions on Wireless Communications, 14(4):2093–2105, 2015.
 16. A. Şahin, R. Yang, 《A Survey on Over-the-Air Computation》, IEEE Communications Surveys & Tutorials, 2023. DOI: 10.1109/COMST.2023.3264649 https://arxiv.org/abs/2210.11350
-17. K. Yang, T. Jiang, Y. Shi, Z. Ding, 《Federated Learning via Over-the-Air Computation》, IEEE Transactions on Wireless Communications, 19(3):2022–2035, 2020（卷期待核）. https://arxiv.org/abs/1812.11750
-18. S. Li, M. A. Maddah-Ali, Q. Yu, A. S. Avestimehr, 《A Fundamental Tradeoff between Computation and Communication in Distributed Computing》, IEEE Transactions on Information Theory, 64(1):109–128, 2018（卷期待核）. https://arxiv.org/abs/1604.07086
+17. K. Yang, T. Jiang, Y. Shi, Z. Ding, 《Federated Learning via Over-the-Air Computation》, IEEE Transactions on Wireless Communications, 19(3):2022–2035, 2020. DOI: 10.1109/TWC.2019.2961673. https://arxiv.org/abs/1812.11750
+18. S. Li, M. A. Maddah-Ali, Q. Yu, A. S. Avestimehr, 《A Fundamental Tradeoff between Computation and Communication in Distributed Computing》, IEEE Transactions on Information Theory, 64(1):109–128, 2018. DOI: 10.1109/TIT.2017.2756959. https://arxiv.org/abs/1604.07086
 19. M. A. Maddah-Ali, U. Niesen, 《Fundamental Limits of Caching》, IEEE Transactions on Information Theory, 60(5):2856–2867, 2014. https://arxiv.org/abs/1209.5807
 20. R. Tandon, Q. Lei, A. G. Dimakis, N. Karampatziakis, 《Gradient Coding: Avoiding Stragglers in Distributed Learning》, ICML 2017, PMLR v70. https://arxiv.org/abs/1612.03301
 21. Q. Yu, S. Li, N. Raviv, S. M. M. Kalan, M. Soltanolkotabi, A. S. Avestimehr, 《Lagrange Coded Computing: Optimal Design for Resiliency, Security, and Privacy》, AISTATS 2019, PMLR v89.

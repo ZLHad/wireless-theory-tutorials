@@ -407,6 +407,7 @@ $$
     $$
 
     在 $(\mathbf{u}^\star,\mathbf{w}^\star)$ 处后两项里的偏导为零，只剩 $\nabla\phi(\mathbf{v})=\nabla_{\mathbf{v}}g$。
+
 - **于是驻点一一对应。**
     - 在同一个功率盒上，$(\mathbf{w},\mathbf{u},\mathbf{v})$ 满足 $g$ 的 KKT 条件，当且仅当 $\mathbf{u},\mathbf{w}$ 取最优值、且 $\mathbf{v}$ 满足 $-\sum_k\alpha_kR_k$ 的 KKT 条件。
     - 反过来，原问题的任一驻点 $\mathbf{v}$ 配上 $\mathbf{u}^\star(\mathbf{v})$、$\mathbf{w}^\star(\mathbf{v})$ 就是 $g$ 的驻点。
@@ -535,11 +536,9 @@ $\log(1/\varepsilon)$ 意味着网络规模随 $\log(1/\varepsilon)$ 线性增�
 
 泛化侧的可引数字：
 
-- 50 用户训练、1000 用户测试，达到 **WMMSE 性能的 98.9%**。
-- 密度放大 10 倍时，降到 **95.3%**。
-- 1000 用户波束成形在单 GPU 上 **66 ms** [14]。
-
-【表述待核：数字经二手抽取，另有 6 ms 的说法出现在部分来源，两者冲突，以原文表 III/IV 为准】
+- 功率控制：50 对收发链路训练、1000 对测试（密度不变），达到 **WMMSE 性能的 98.9%**（原文表 III）。
+- 面积不变、链路增到 500 对（密度放大 10 倍）时，降到 **95.3%**（表 IV）。
+- 1000 对收发的波束成形，在单块 GPU 上 **6 ms** 内解完 [14]。
 
 !!! warning "最容易被误引的一个数字"
     "98.9%"是相对 **WMMSE** 的比值，不是相对全局最优。WMMSE 自己只是一个驻点算法。
@@ -874,7 +873,7 @@ OGP 因此可以直接给出"GNN 功控的信息论式上限"，含义是：任�
     - 编目站点 vibemathed 将其标为 "Candidate (unreviewed)"，significance 评分 18/100。
     - 手稿脚注自述：结果由 AI 模型证明并起草初稿，作者提出问题、指导多轮证明简化、验证全部数学论证并承担全部责任 [33]。
 
-    此外，"多项式时间达到 ML"的宣称**并非首次**：2019 年 Stojnic 的 CLuP 就有类似主张 [34]（技术地位待核）。本次事件的新意在于两点：给出了匹配 $2\log N$ 阈值的完整证明，以及证明由 AI 产出。
+    此外，"多项式时间达到 ML"的宣称**并非首次**：2019 年 Stojnic 的 CLuP 就有类似主张 [34]，至今只见 arXiv 版本、未见同行评审的发表。本次事件的新意在于两点：给出了匹配 $2\log N$ 阈值的完整证明，以及证明由 AI 产出。
 
 它在本章的功能是方法论样板，不是结论。它示范三件事：
 
@@ -958,7 +957,7 @@ OGP 因此可以直接给出"GNN 功控的信息论式上限"，含义是：任�
 23. L. Pellaco, M. Bengtsson, J. Jaldén, 《Deep unfolding of the weighted MMSE beamforming algorithm》, arXiv:2006.08448, 2020. https://arxiv.org/abs/2006.08448
 24. Y. Peng, J. Guo, C. Yang, 《Learning Resource Allocation Policy: Vertex-GNN or Edge-GNN?》, arXiv:2307.12480, 2023. https://arxiv.org/abs/2307.12480
 25. Y. Shen, J. Zhang, S. H. Song, K. B. Letaief, 《Graph Neural Networks for Wireless Communications: From Theory to Practice》, IEEE Transactions on Wireless Communications, 22(5):3554–3569, 2023. DOI: 10.1109/TWC.2022.3219840
-26. L. Liu, R. Zhang, K.-C. Chua, 《Achieving Global Optimality for Weighted Sum-Rate Maximization in the K-User Gaussian Interference Channel with Multiple Antennas》, arXiv:1202.2231, 2012（IEEE TWC 2012，卷期待核）. https://arxiv.org/abs/1202.2231
+26. L. Liu, R. Zhang, K.-C. Chua, 《Achieving Global Optimality for Weighted Sum-Rate Maximization in the K-User Gaussian Interference Channel with Multiple Antennas》, IEEE Transactions on Wireless Communications, 11(5):1933–1945, 2012. DOI: 10.1109/TWC.2012.031212.111585；arXiv:1202.2231. https://arxiv.org/abs/1202.2231
 27. H. Du, R. Zhang, Y. Liu, D. Niyato, D. I. Kim 等, 《Enhancing Deep Reinforcement Learning: A Tutorial on Generative Diffusion Models in Network Optimization》, IEEE Communications Surveys & Tutorials, 2024. DOI: 10.1109/COMST.2024.3400011. https://arxiv.org/abs/2308.05384 ｜代码 https://github.com/HongyangDu/GDMOPT
 28. Y. B. Uslu, S. Hadou, S. Saeedi Bidokhti, A. Ribeiro, 《Generative Diffusion Models for Resource Allocation in Wireless Networks》, IEEE CAMSAP 2025, arXiv:2504.20277. https://arxiv.org/abs/2504.20277 ｜扩展版《Graph Signal Diffusion Models for Wireless Resource Allocation》, arXiv:2604.05175, 2026.
 29. Z. Sun, Y. Yang, 《DIFUSCO: Graph-based Diffusion Solvers for Combinatorial Optimization》, NeurIPS 2023, arXiv:2302.08224. https://arxiv.org/abs/2302.08224
@@ -966,4 +965,4 @@ OGP 因此可以直接给出"GNN 功控的信息论式上限"，含义是：任�
 31. 《From Denoising to Decision Making: A Survey on Diffusion Model-Enabled Deep Reinforcement Learning for Wireless Networks》, arXiv:2605.25531, 2026. https://arxiv.org/abs/2605.25531
 32. J. Wang, Y. Sheng, L. Liang, H. Ye, S. Jin, 《Wireless Power Control Based on Large Language Models》, arXiv:2603.00474v2, 2026. https://arxiv.org/abs/2603.00474
 33. D. Papailiopoulos, 《Polynomial-Time MIMO Detection at the Maximum-Likelihood Threshold》, arXiv:2609.19405, 2026（2026-08-08 先以手稿发布于作者个人 GitHub，2026-09-16 上 arXiv；**未经同行评议**）. https://arxiv.org/abs/2609.19405
-34. M. Stojnic, 《Controlled Loosening-up (CLuP) — achieving exact MIMO ML in polynomial time》, arXiv:1909.01175, 2019（历史对照，技术地位待核）. https://arxiv.org/abs/1909.01175
+34. M. Stojnic, 《Controlled Loosening-up (CLuP) — achieving exact MIMO ML in polynomial time》, arXiv:1909.01175, 2019（历史对照；截至 2026 年 10 月只见 arXiv 版本）. https://arxiv.org/abs/1909.01175

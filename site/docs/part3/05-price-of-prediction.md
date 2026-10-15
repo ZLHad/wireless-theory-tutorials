@@ -836,7 +836,7 @@ flowchart TB
 6. Zheng 等, 《Scheduling LLM Inference with Uncertainty-Aware Output Length Predictions》, arXiv:2604.00499, 2026, https://arxiv.org/abs/2604.00499
 7. UniBoost：免预测的尾部感知 LLM 调度器（作者列表本站未核）, arXiv:2606.18431, 2026, https://arxiv.org/abs/2606.18431
 8. 《When the gain of predictive resource allocation for content delivery is large?》（作者列表本站未核）, Science China Information Sciences, DOI 10.1007/s11432-022-3769-9
-9. U. Krengel, L. Sucheston, 《Semiamarts and finite values》/《On semiamarts, amarts, and processes with finite value》, Bull. AMS 83 / Adv. Prob. Related Topics 4, 1977/1978（1/2 常数的原始出处；具体篇目归属待核）
+9. U. Krengel, L. Sucheston, 《Semiamarts and finite values》, Bull. Amer. Math. Soc., 83(4):745–747, 1977, DOI 10.1090/S0002-9904-1977-14378-4；《On semiamarts, amarts, and processes with finite value》, Advances in Probability and Related Topics 4, pp. 197–266, Dekker, 1978。常数 $1/2$ 按惯例记为 Krengel–Sucheston 与 Garling 的结果，两篇同引，原始证明在 1978 年的长文（见 J. Correa 等，《Recent developments in prophet inequalities》, ACM SIGecom Exchanges, 17(1):61–70, 2018 的归属）。
 10. E. Samuel-Cahn, 《Comparison of threshold stop rules and maximum for independent nonnegative random variables》, Annals of Probability, 1984
 11. T.P. Hill, R.P. Kertz, 《Comparisons of stop rule and supremum expectations of i.i.d. random variables》, Annals of Probability, 1982
 12. R.P. Kertz, 《Stop rule and supremum expectations of i.i.d. random variables: a complete comparison by conjugate duality》, Journal of Multivariate Analysis, 1986

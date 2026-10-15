@@ -860,7 +860,7 @@ Kelly 框架并没有随互联网骨干网退场，只是换了舞台。
 
 方法谱系上属对偶分解：耦合约束 → 拉格朗日 → 每设备看一个标量价格独立决策。这与 §2.3 的 Step 1–4 逐字对应。Kim 等 [17] 就是"外层用对偶或定价求乘子、内层用凸优化解子问题"的写法。
 
-本站的印象是，这种写法在 2024–2025 的 MEC 文献中常见，但没有做过系统统计。【表述待核：这是对普遍写法的概括，只核到 [17] 这一篇。】
+这种写法在近年的 MEC 文献里不少见，不过本站没有做系统统计，这里只以 [17] 为例【本站判断】。
 
 ### 2.7.3 两个构造场景：LLM 推理服务与联邦学习
 
@@ -975,7 +975,7 @@ Kelly 框架并没有随互联网骨干网退场，只是换了舞台。
 
 A8 是本站为衔接[第 7 章](07-price-of-layering.md)补入的一条。A1–A7 的组织与"假设 → 章节"映射同样是本站的编排设计，不是文献里现成的分类。
 
-还该记下一条"经典其实没那么干净"的缓冲。Akhila 与 Sundaresan 指出，分布式迭代 NUM 算法有三个技术病灶：
+还该记下一条"经典其实没那么干净"的缓冲。Akhil 与 Sundaresan 指出，分布式迭代 NUM 算法有三个技术病灶：
 
 - 迭代轨迹上的点可能**不可行**。
 - 可能收敛到**与原问题不同的松弛问题**的最优点。
@@ -1021,12 +1021,12 @@ A8 是本站为衔接[第 7 章](07-price-of-layering.md)补入的一条。A1–
 9. M. Chiang, S. H. Low, A. R. Calderbank, J. C. Doyle, 《Layering as Optimization Decomposition: A Mathematical Theory of Network Architectures》, Proceedings of the IEEE, 95(1):255–312, 2007. https://murray.cds.caltech.edu/images/murray.cds/9/96/Chiang_layering-16aug06.pdf
 10. J. N. Tsitsiklis, Z.-Q. Luo, 《Communication complexity of convex optimization》, Journal of Complexity, 3(3):231–243, 1987. https://www.mit.edu/~jnt/Papers/J018-87-comm_compl_convex.pdf
 11. M. Alizadeh, A. Greenberg, D. A. Maltz, J. Padhye, P. Patel, B. Prabhakar, S. Sengupta, M. Sridharan, 《Data Center TCP (DCTCP)》, ACM SIGCOMM 2010. DOI: 10.1145/1851182.1851192. https://dl.acm.org/doi/10.1145/1851182.1851192
-12. M. Alizadeh, A. Javanmard, B. Prabhakar, 《Analysis of DCTCP: Stability, Convergence, and Fairness》, ACM SIGMETRICS 2011（卷期页待核）.
+12. M. Alizadeh, A. Javanmard, B. Prabhakar, 《Analysis of DCTCP: Stability, Convergence, and Fairness》, Proc. ACM SIGMETRICS 2011, pp. 73–84. DOI: 10.1145/1993744.1993753
 13. K. Nagaraj, D. Bharadia, H. Mao, S. Chinchali, M. Alizadeh, S. Katti, 《NUMFabric: Fast and Flexible Bandwidth Allocation in Datacenters》, ACM SIGCOMM 2016. DOI: 10.1145/2934872.2934890. https://dspace.mit.edu/bitstream/handle/1721.1/110765/NUMFabric.pdf
-14. P. T. Akhila, R. Sundaresan, 《Network utility maximization revisited: Three issues and their resolution》, arXiv:1609.03194（期刊版出处待核）. https://arxiv.org/pdf/1609.03194
+14. P. T. Akhil, R. Sundaresan, 《Network utility maximization revisited: Three issues and their resolution》, Performance Evaluation, 136:102050, 2019. DOI: 10.1016/j.peva.2019.102050；arXiv:1609.03194. https://arxiv.org/pdf/1609.03194
 15. X. Fu, E. Modiano, 《Learning-NUM: Network Utility Maximization with Unknown Utility Functions and Queueing Delay》, ACM MobiHoc 2021; arXiv:2012.09222. DOI: 10.1145/3466772.3467031. https://arxiv.org/abs/2012.09222
 16. G. Vardoyan, S. Wehner, 《Quantum Network Utility Maximization》, arXiv:2210.08135, 2022. https://arxiv.org/abs/2210.08135
-17. M. Kim, J. Jang, Y. Choi, H. J. Yang, 《Distributed Task Offloading and Resource Allocation for Latency Minimization in Mobile Edge Computing Networks》, arXiv:2404.03154, 2024. https://arxiv.org/abs/2404.03154
+17. M. Kim, J. Jang, Y. Choi, H. J. Yang, 《Distributed Task Offloading and Resource Allocation for Latency Minimization in Mobile Edge Computing Networks》, IEEE Transactions on Mobile Computing, 23(12):15149–15166, 2024. DOI: 10.1109/TMC.2024.3458185；arXiv:2404.03154. https://arxiv.org/abs/2404.03154
 18. A. Sreekumar, A. Degleris, R. Rajagopal, 《Large-Scale Network Utility Maximization via GPU-Accelerated Proximal Message Passing》, arXiv:2509.10722, 2025. https://arxiv.org/abs/2509.10722
 19. Q. M. Nguyen, R. Berry, E. Modiano, 《Stochastic Network Utility Maximization in Strategic Queueing Systems: A Game-Theoretic Approach》, Proc. ACM Meas. Anal. Comput. Syst., 10(1):1–48, 2026 (SIGMETRICS 2026). DOI: 10.1145/3788103. https://dl.acm.org/doi/10.1145/3788103
 20. A. Karbowski, 《Comments on "Optimization flow control. I. Basic algorithm and convergence"》, IEEE/ACM Transactions on Networking, 11(2):338–339, 2003. DOI: 10.1109/TNET.2003.810318. https://arxiv.org/abs/cs/0209024
