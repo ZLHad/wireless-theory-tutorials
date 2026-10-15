@@ -39,5 +39,5 @@ flowchart TB
 | [5 · 共享模型协商](05-shared-world-model.md) | 三级共享阶梯、Newman、KL 罚项、推测解码接受率 $1-\mathrm{TV}$、协商话费猜想 | 探索章 |
 | [6 · 学习动力学](06-learning-dynamics.md) | Nash $\subset$ CE $\subset$ CCE、no-regret $\Longrightarrow$ CCE（完整证明）、势博弈、MWU 两变体、无线版分岔阈值 $\eta^\star=7.45$、时间平均 vs 末迭代的可算分离 | 经典 + 本站演算 |
 | [7 · 平均场](07-mean-field.md) | MFG $\neq$ MFC 是 $O(1)$（12.5%）、有限 $N$ 修正 $-0.25/N$、$1/\sqrt N$ 的来源、有效人数 $N_{\mathrm{eff}}$ 与 $\alpha=2$ 相边界 | 经典 + 本站演算 |
-| [8 · 网络博弈](08-network-games.md) | 两小区博弈 PoA=1.35/PoS=1.07、势博弈判据、smoothness 与 $5/2$、Etkin $\mathrm{PoA}=\infty$、价格家族、Lozano 天花板与耦合度 $\kappa$ | 经典 + 本站提法 |
+| [8 · 网络博弈](08-network-games.md) | 两小区博弈 PoA=1.35/PoS=1.07、势博弈判据、smoothness 与 $5/2$、Etkin $\mathrm{PoA}=\infty$、价格家族、Lozano 天花板与耦合度 $\kappa$；Stackelberg 定价与契约的信息租 | 经典 + 本站提法 |
 | [9 · 研究纲领](09-research-agenda.md) | 四条缺失定理的四件套（引理 9.2 补时延判据必要方向、命题 9.3–9.6 五条新算例）、接口表、打分、路线图；**全站收尾**：四部合成表、元命题"缺的不是算法，是 converse"、闭环图 | 纲领 + 全站收尾 |

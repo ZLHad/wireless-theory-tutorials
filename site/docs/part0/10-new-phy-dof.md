@@ -142,6 +142,18 @@ $$
 
 多根可移动天线时，挪位置改变的是整个信道矩阵的奇异值，Ma 等 [3] 用交替优化刻画了这时的 MIMO 容量。多用户时，可以把天线挪到用户之间信道相关性小的位置，压低用户间干扰（Zhu 等 [4]）。两类位置优化都高度非线性，现有算法只保证局部最优。
 
+**转动也是自由度：六维可移动天线。** 上面挪的都是位置。Shao、Jiang 与 Zhang 把基站天线做成若干块小天线面，每块的三维位置和三维转角都可以调，合称六维可移动天线（6DMA，six-dimensional movable antenna）[35][36]。
+
+转动能买到什么，用单元方向图就能算。按 TR 38.901 的单元方向图，水平面上偏离面板法向 $\phi$ 时，增益比法向低 $12(\phi/65^\circ)^2$ dB（最多低 30 dB），法向增益 8 dBi [28]。
+
+- 传统三扇区基站的三块面板各管 $120^\circ$。扇区交界处的用户偏离最近面板的法向 $60^\circ$，单元增益低 $12\times(60/65)^2=10.2$ dB。
+- 如果用户恰好集中在这个方向，比如一个路口、一个场馆入口，把一块面板转过去对准它，这 10.2 dB 全部拿回来【本站演算】。
+- 偏离 $30^\circ$ 时只低 2.6 dB。转动的价值集中在用户分布不均、热点又偏离面板法向的时候，这与 [35] 的数值结论一致：用户分布越不均匀，6DMA 相对固定天线的增益越大。
+
+它和前面的位置挪动有一个关键区别：**转动追的是用户在哪里，不是小尺度衰落。** 用户分布按分钟到小时变化，机械结构完全跟得上，正好落在 10.1.9 节两时间尺度设计的慢层。基站天线的方位角与下倾角在网络规划里本来就要调，6DMA 把它们变成按用户分布在线调整的变量，还连位置一起调。
+
+代价也在这里。几块面板的位置与转角是相互耦合的连续变量，[35] 用交替优化逐块搜索，[36] 把位置与转角离散化后求解，都只保证局部最优。
+
 ### 10.1.8 级联信道的秩 {#级联信道的秩}
 
 [第 5 章 5.5 节末的提示框](05-mimo.md#55-mimo-容量与自由度从-logdet-到-minn_tn_rlogmathrmsnr)证明过 $\operatorname{rank}(\mathbf{H}_2\boldsymbol{\Theta}\mathbf{H}_1)\le\min(\operatorname{rank}\mathbf{H}_1,\operatorname{rank}\mathbf{H}_2)$。用它看可移动天线，有两种情形：
@@ -187,7 +199,7 @@ $$
 
     | 检查项 | 结果 |
     |---|---|
-    | 开的是哪扇门 | 天线位置成为设计变量，在一块区域里挑信道最好的点 |
+    | 开的是哪扇门 | 天线位置成为设计变量，在一块区域里挑信道最好的点；六维可移动天线把转角也变成变量，按用户分布调 |
     | 时间尺度 | 追步行下的小尺度衰落需滑台速度 1.65 m/s 以上；机械移动只宜按统计信道调位置（两时间尺度），电子切换的流体天线可快得多 |
     | 信息结构 | 要知道整片区域的信道场，天线只能在当前位置测；靠场响应模型从少量测量外推，是一个逆问题 |
     | 自由度与秩 | 单天线增益不超过径数 $L$；散射丰富时按 $\ln(4A/\lambda)$ 涨，$4\lambda$ 区域 5.4 dB；级联信道里只动一端救不了另一段的秩 |
@@ -1199,3 +1211,5 @@ flowchart LR
 32. 3GPP TS 38.211, "NR; Physical channels and modulation," Release 15 及后续版本，§5.3.1（OFDM 基带信号与循环前缀长度）.
 33. ITU-R：Resolution 256 (WRC-23)，据 ITU 区域无线电通信研讨会 RRS-24 Asia-Pacific 讲稿 "WRC-23 results and WRC-27 terrestrial"；Report ITU-R SM.2352-1 (07/2022)，转引无线电规则 No. 5.564A.
 34. K.-K. Wong, K.-F. Tong, "Fluid antenna multiple access," *IEEE Transactions on Wireless Communications*, vol. 21, no. 7, pp. 4801–4815, 2022. DOI: 10.1109/TWC.2021.3133410
+35. X. Shao, Q. Jiang, R. Zhang, "6D movable antenna based on user distribution: Modeling and optimization," *IEEE Transactions on Wireless Communications*, vol. 24, no. 1, pp. 355–370, 2025. DOI: 10.1109/TWC.2024.3492195
+36. X. Shao, R. Zhang, Q. Jiang, R. Schober, "6D movable antenna enhanced wireless network via discrete position and rotation optimization," *IEEE Journal on Selected Areas in Communications*, vol. 43, no. 3, pp. 674–687, 2025. DOI: 10.1109/JSAC.2025.3531571

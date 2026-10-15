@@ -33,7 +33,7 @@ flowchart TB
 | [1 · 序章](01-three-mountains.md) | 三座大山 × 四大舞台矩阵；上界/下界的不对称繁荣 | 观点与导读 |
 | [2 · 经典地基](02-classical-foundations.md) | 注水、NUM 对偶分解、TCP 即优化；隐含假设清单 | 经典 |
 | [3 · 非凸时代](03-nonconvex-era.md) | NP-hard、WMMSE→GNN→扩散三代方法、平均情形之谜 | 经典+开放 |
-| [4 · 时序决策全景](04-sequential-uncertainty.md) | 四种「不知道」四个理论；同一卸载问题四种解法 | 框架整理 |
+| [4 · 时序决策全景](04-sequential-uncertainty.md) | 四种「不知道」四个理论；同一卸载问题四种解法；另有最坏时延（网络演算）与信息年龄两本时间账 | 框架整理 |
 | [5 · 预测的价目表](05-price-of-prediction.md) | V(I) 纲领；LLM 输出长度预测调度为活例 | 原创纲领 |
 | [6 · 最小话费](06-communication-lower-bounds.md) | 通信复杂度下界；FL 压缩与 CSI 两侧模型为活例 | 原创纲领 |
 | [7 · 分层的代价](07-price-of-layering.md) | PoL 纲领；大模型分割推理与算力网络编排为活例 | 原创纲领 |

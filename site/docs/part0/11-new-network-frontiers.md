@@ -186,6 +186,54 @@ Rel-18 又加了 D2，参考位置随卫星移动，针对随卫星一起在地�
     | 任务与价值 | 覆盖与应急，单用户速率不是重点 |
     | 阶段与去处 | 推广【本站判断】；[第一部第 1 章](../part1/01-lie-of-randomness.md#maxwell-的裁决信道是环境的确定性泛函)、[第一部第 7 章](../part1/07-channel-cartography.md)（地图与先验）、[第二部 5.5 节](../part2/05-cognitive-triangle.md#55-同一条律耐用品与易逝品从-t_mathrmcoh-到-t_mathrmenv)（耐用品与易逝品） |
 
+### 11.1.9 延伸：在轨计算，在天上算还是传下来算
+
+上面讲的都是卫星怎么当基站。卫星还有另一种身份：它自己就是数据源。一颗对地观测卫星拍下的图像，往往比它能传回地面的多得多。
+
+**最简案例。** Denby 与 Lucia 2020 年算过一笔账 [40]。一颗 410 km 高的极轨卫星，一圈约 93 分钟。一个位置理想、每圈都能看到它的地面站，每次通联 10 分钟，按 200 Mb/s 下传，最多拉回 15 GB。一圈 93 分钟只够排下 9 次这样的通联，所以一个地面站最多服务 9 颗卫星；1000 颗卫星的星座要 112 个理想布置的地面站。实际的通联时长与站址都比这差。
+
+**洞见。** 瓶颈不在拍，而在传。而传下来的图像里，大部分没有用：有云遮挡，或者拍的地方没有要找的东西。如果在星上先做一遍识别，只传有用的部分，下传量就能大幅减少。
+
+他们的例子里，识别后只留下 0.75 GB，以 200 Mb/s 下传只要 30 s，一个地面站每圈能服务 185 颗卫星，1000 颗星只要 6 个站 [40]。这就是轨道边缘计算（orbital edge computing）：把计算放在数据产生的地方，用算力换下传带宽。
+
+!!! example "算例：一颗 3U 立方星的三本账"
+
+    在天上算不是免费的，有三本账要同时算。
+
+    **下传账。** 上面已经算过：$200\ \mathrm{Mb/s}\times600\ \mathrm{s}=120$ Gbit $=15$ GB；$93/10\approx9$；$0.75\ \mathrm{GB}=6$ Gbit，$6\ \mathrm{Gbit}/200\ \mathrm{Mb/s}=30$ s。
+
+    **能量账。** 3U 立方星（约 $10\times10\times34$ cm）贴在机身上的太阳能板，峰值只有约 7.1 W；文中选的边缘 GPU 工作在 7.5 W 档 [40]，一块芯片就把全部发电吃光。卫星每圈还有一段时间在地球影子里。取太阳方向落在轨道平面内的最坏情形（地影最长），把地球的影子近似成圆柱，地影占一圈的比例是
+
+    $$
+    f_{\mathrm{ecl}}=\frac{1}{\pi}\arcsin\frac{R}{R+h}.
+    $$
+
+    410 km 时 $f_{\mathrm{ecl}}=0.389$，约 36 分钟没有阳光；600 km 时 0.367，约 35 分钟【本站演算】。按 7.1 W 峰值和 56.6 分钟日照，一圈最多收集约 24 kJ，而 7.5 W 连续运行一圈要 42 kJ。
+
+    **散热账。** 太空里没有空气对流，热量只能靠辐射散掉。按斯特藩–玻尔兹曼定律，发射率 $\varepsilon=0.85$ 的散热面在 300 K 时，每平方米只能向深空辐射
+
+    $$
+    q=\varepsilon\sigma T^4=0.85\times5.67\times10^{-8}\times300^4\approx390\ \mathrm{W/m^2}.
+    $$
+
+    散掉 7.5 W 要约 $0.019\ \mathrm{m^2}$，一个侧面就够；散掉 100 W 要 $0.26\ \mathrm{m^2}$，比整颗 3U 立方星的表面积（约 $0.16\ \mathrm{m^2}$）还大；300 W 的数据中心级 GPU 要 $0.77\ \mathrm{m^2}$【本站演算】。这里没算吸收的阳光与地球红外，真实情况更紧。
+
+    **校验**
+
+    - 地影比例的极限：$h\to0$ 时 $\arcsin1=90^\circ$，地影占一半，就是贴地飞行时一半时间在夜里；$h\to\infty$ 时趋于 0。
+    - 周期用 $T=2\pi\sqrt{(R+h)^3/GM}$，410 km 得 92.6 min，与文中的 92.9 min 差 0.3%。
+    - 散热：$300^4=8.1\times10^9$，乘 $5.67\times10^{-8}$ 得 459 W/m²，再乘 0.85 得 390 W/m²。
+
+**模型与第一个解。** 一颗立方星的能量撑不起实时处理它拍下的每一帧。Denby 与 Lucia 的解法是让多颗卫星沿同一条地面轨迹排成"计算流水线"：把一帧图像切成小块分给几颗星，或者让相邻的星轮流处理相邻的帧，每颗星只需在飞到下一帧之前做完自己的那一份。星上的运行时服务根据轨道参数、物理模型和地面站位置，预先决定什么时候拍、什么时候算、什么时候准备下传 [40]。他们报告这套体系结构比传统的"弯管"体系少用 24 倍以上的地面设施 [40]；更早的一篇短文先提出了这个方向 [41]。
+
+**打开的门。** 这篇论文把卫星星座当成一类新的计算机系统来研究。此后出现了公开的在轨计算试验平台 [43]；3GPP Rel-19 的再生式载荷把基站放上卫星（11.1.7 节），星上也就有了处理能力。卫星与地面站之间只能间歇通联，数据要先存在星上、等到下一个窗口再转发，这就是容延网络（DTN，delay-tolerant networking）的存储–携带–转发思路 [42]。
+
+**还没解决的事**
+
+- **算多少、在哪算。** 下传窗口、日照、温度都随轨道变化，而且都能按星历提前算出来，这和 11.1.5 节"确定性的那一块"是同一回事。把这些可预测的约束一起放进调度，怎样分配星上计算与下传，目前多是启发式。
+- **丢掉的数据回不来。** 星上识别相当于为某一个任务做了有损压缩：只留下对这个任务有用的部分。换一个任务，被丢掉的原始图像可能恰好有用。为哪些任务保留什么统计量，是[第二部第 3 章](../part2/03-task-knowledge-lattice.md)"任务需要知道什么"在轨道上的版本。
+- **散热是比电更硬的墙。** 太阳能板可以展开得更大，散热面同样要面积，还要背对太阳。星上算力能做多大，很可能先撞上散热，而不是先撞上发电。
+
 ---
 
 ## 11.2 无人机与低空网络：位置和航迹成了设计变量 {#112-无人机与低空网络位置和航迹成了设计变量}
@@ -970,6 +1018,7 @@ flowchart LR
 - **安全**问的是对手的信息：被动的窃听者不会上报信道，保证只能建立在对它的不确定性之上。这是[第二部](../part2/index.md)信息论工具的用武之地。
 - **AI** 问的是时间尺度与泛化，见[第二部第 4 章](../part2/04-environment-generalization.md)、[第三部第 3 章](../part3/03-nonconvex-era.md)与[第 5 章](../part3/05-price-of-prediction.md)。
 - **携能与无人机**把代价写在最前面，能量与续航是第一约束。
+- **在轨计算**（11.1.9 节）算的是算力与下传带宽的兑换，背后是下传、能量、散热三本账；轨道可预测，三本账也都能提前算。
 
 很多个决策者各自只掌握一部分信息、信息传递又要花时间时，问题就进入了[第四部](../part4/index.md)的信息结构。
 
@@ -1026,5 +1075,9 @@ flowchart LR
 37. 3GPP TR 38.744 V19.0.1, "Study on Artificial Intelligence (AI)/Machine Learning (ML) for Mobility in NR," 2025-11.
 38. T. O'Shea, J. Hoydis, "An introduction to deep learning for the physical layer," *IEEE Transactions on Cognitive Communications and Networking*, vol. 3, no. 4, pp. 563–575, 2017. DOI: 10.1109/TCCN.2017.2758370
 39. J. Hoydis 等, "Toward a 6G AI-native air interface," *IEEE Communications Magazine*, vol. 59, no. 5, pp. 76–81, 2021. DOI: 10.1109/MCOM.001.2001187
+40. B. Denby, B. Lucia, "Orbital Edge Computing: Nanosatellite Constellations as a New Class of Computer System," *Proc. ASPLOS*, pp. 939–954, 2020. DOI: 10.1145/3373376.3378473
+41. B. Denby, B. Lucia, "Orbital Edge Computing: Machine Inference in Space," *IEEE Computer Architecture Letters*, vol. 18, no. 1, pp. 59–62, 2019. DOI: 10.1109/LCA.2019.2907539
+42. K. Fall, "A delay-tolerant network architecture for challenged internets," *Proc. ACM SIGCOMM*, pp. 27–34, 2003. DOI: 10.1145/863955.863960
+43. S. Wang, Q. Li, M. Xu, X. Ma, A. Zhou, Q. Sun, "Tiansuan Constellation: An Open Research Platform," *Proc. IEEE EDGE*, pp. 94–101, 2021. DOI: 10.1109/EDGE53862.2021.00022
 
 3GPP 文件的标题、版本号与日期经本站核对。

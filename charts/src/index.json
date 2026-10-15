@@ -413,5 +413,15 @@
   "id": "p4-09-2",
   "page": "part4/09-research-agenda.md",
   "type": "quadrantChart"
+ },
+ {
+  "id": "p3-04-n1",
+  "page": "part3/04-sequential-uncertainty.md",
+  "type": "xychart-beta"
+ },
+ {
+  "id": "p3-04-n2",
+  "page": "part3/04-sequential-uncertainty.md",
+  "type": "xychart-beta"
  }
 ]

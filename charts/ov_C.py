@@ -217,4 +217,18 @@ OV = {
            'T3-b 观测噪声轴方向': (-8, 0, 'right', 'center'),
            'T4-c κ 三候选对照': (-8, 0, 'right', 'center')},
  ),
+ 'p3-04-n1': dict(
+     title='多跳的最坏时延界：突发只付一次与逐跳相加',
+     xlabel=r'经过的节点数 $H$',
+     ylabel='最坏时延上界（ms）',
+     legend=[r'端到端界 $HT_0+b/R$', '逐跳相加'],
+ ),
+ 'p3-04-n2': dict(
+     title=r'M/M/1 先来先服务：平均年龄是一个碗，平均时延单调上升',
+     xlabel=r'负载 $\rho=\lambda/\mu$',
+     ylabel=r'以 $1/\mu$ 为单位',
+     legend=[r'平均年龄 $\mu\bar\Delta$', r'平均时延 $\mu\bar T$'],
+     vlines=[0.531],
+     notes=[(0.531, 11.8, r'$\rho^\star\approx0.53$', dict(ha='left', va='top', off=(5, -2)))],
+ ),
 }
